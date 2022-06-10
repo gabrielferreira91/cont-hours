@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+
+    <title>Contador de Tempo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <h1>Contador de Tempo</h1>
+        <h2>Facilitando seus cálculos diários</h2>
+    </header>
+    <main>
+        <div class="container">
+            <p>
+                Digite o horário de entrada e saída para saber
+                a quantidade de tempo trabalhada
+            </p>
+                <div class="timeWorked">
+                    <div class="timeTo timeToEnter">
+                        <p>
+                            Entrada no Trabalho
+                        </p>
+                        <div class="containerInput">
+                            <input id="hourEnter" class="time" type="number" placeholder="Horas">
+                            <strong>:</strong>
+                            <input id="minuteEnter" class="time" type="number" placeholder="Minutos">
+                        </div>
+                        
+                    </div>
+                    <div class="line"></div>
+                    <div class="timeTo timeToEnd">
+                        <p>
+                            Saída do Trabalho
+                        </p>
+                        <div class="containerInput">
+                            <input id="hourEnd" class="time" type="number" placeholder="Horas">
+                            <strong>:</strong>
+                            <input id="minuteEnd" class="time" type="number" placeholder="Minutos">
+                        </div>
+                    </div>                
+                </div>
+            <button class="calcTime" id="calcTime" onclick='getTimes()'>Calcular Tempo</button>
+            <div id="totalTime"> <strong class="totalHour">00</strong>:<strong class="totalMinute">00</strong></div>            
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span class="developed">
+            Desenvolvido por:
+            <p>
+                Gabriel Ferreira
+            </p>
+        <span>
+    </footer>
+    <script src="./contTime.js"></script>
+</body>
+</html>
