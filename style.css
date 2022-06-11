@@ -157,7 +157,7 @@ footer div{
    background:  #212121;
 }
 
-footer:before {
+footer div:before {
     content: '';
     position: absolute;
     top: -2px;
@@ -170,7 +170,7 @@ footer:before {
     border-radius: 2rem;
 }
 
-footer:after {
+footer div:after {
     content: '';
     position: absolute;
     top: -2px;
@@ -184,7 +184,7 @@ footer:after {
     border-radius: 2rem;
 }
 
-footer:before,
-footer:after {
+footer div:before,
+footer div:after {
     background: linear-gradient(210deg, #89ff00, #212121, #00bcd4 );
 }
