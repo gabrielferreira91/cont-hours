@@ -134,15 +134,25 @@ input[type=number] {
 /* ====> FOOTER <====== */
 
 footer {
-    margin: 3rem;
+    display: flex;
+
+    position: relative;
+    align-self:flex-end;
+
+    height: 27vh;
+    
+}
+
+footer div{
+    position: relative;
+    align-self:flex-end;
+
+    margin: 1.5rem;
     padding: 1.3rem;
     width: 20rem;
     
     /* border: 3px solid #73AD21;*/
     border-radius: 2rem; 
-
-    position: relative;
-    left: 3rem;
 
    background:  #212121;
 }
