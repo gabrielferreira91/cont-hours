@@ -1,11 +1,11 @@
- let inputEnterHour = document.querySelector('#hourEnter');
- let inputEnterMinute = document.querySelector('#minuteEnter');
- 
- let inputEndHour = document.querySelector('#hourEnd');
- let inputEndMinute = document.querySelector('#minuteEnd');
+let inputEnterHour = document.querySelector('#hourEnter');
+let inputEnterMinute = document.querySelector('#minuteEnter');
 
- let totalHour = document.querySelector('.totalHour')
- let totalMinute = document.querySelector('.totalMinute')
+let inputEndHour = document.querySelector('#hourEnd');
+let inputEndMinute = document.querySelector('#minuteEnd');
+
+let totalHour = document.querySelector('.totalHour')
+let totalMinute = document.querySelector('.totalMinute')
 
 let arrayForNumbers = [];
 let formatted = [];
@@ -20,7 +20,6 @@ function getTimes(){
     let endHour = parseInt(inputEndHour.value);
     let endMinute = parseInt(inputEndMinute.value);   
     
-//    console.log(convertMinuteInHourReturnHour(350) + " : " + convertMinuteInHourReturnMinute(350));
 
     let totalMinutes = calcHoursWorked(enterHour,enterMinute,endHour,endMinute);
     let resultHour = convertMinuteInHourReturnHour(totalMinutes);
@@ -37,20 +36,17 @@ function getTimes(){
           })
         )
     })
-
-    if (totalMinutes >= 0) {
-        setTimes(formatted[0], formatted[1]);
-    } else {
-        totalHour.textContent = 'HORAS';
-        totalMinute.textContent = 'INVÁLIDAS';
+   
+    if(validatedTime(enterHour, enterMinute) && validatedTime(endHour, endMinute))
+    {
+        if (totalMinutes >= 0) {
+            setTimes(formatted[0], formatted[1]);
+        } else {
+            msgError()
+        } 
+    }else {
+        return msgError();
     }
-    0    
-    // console.log(resultHour);
-    // console.log(resultMinute);
-
-    // console.log(arrayForNumbers);
-    // console.log(formatted);
-
  }
 
 
@@ -78,4 +74,20 @@ function calcHoursWorked(enterHour, enterMinute, endHour, endMinute){
     let resultEnd = hourEnd + endMinute;
 
     return resultEnd - resultEnter
+}
+
+
+function validatedTime(hour, minute){
+    if (hour >= 0 && hour <=24 ) { 
+        if (minute >= 0 && minute < 60) {
+            return true
+        }
+        return false
+    }  
+    return false    
+}
+
+function msgError(){
+    totalHour.textContent = 'HORAS';
+    totalMinute.textContent = 'INVÁLIDAS';
 }
