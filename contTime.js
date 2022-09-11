@@ -7,8 +7,54 @@ let inputEndMinute = document.querySelector('#minuteEnd');
 let totalHour = document.querySelector('.totalHour')
 let totalMinute = document.querySelector('.totalMinute')
 
+let calcTimeButton = document.querySelector('.calcTime')
+
 let arrayForNumbers = [];
 let formatted = [];
+
+
+//TROCAR DE INPUT AUTOMATICAMENTE 
+var container1 = document.getElementsByClassName("timeWorked")[0];
+container1.onkeyup = function(e) {
+    var target = e.srcElement;
+    var maxLength = 2;
+    var myLength = target.value.length;
+    if (myLength >= maxLength) {
+        var next = target;
+        while (next = next.nextElementSibling) {
+            if (next == null)
+                break;
+            if (next.tagName.toLowerCase() == "input") {
+                next.focus();
+                break;
+            }
+        }
+    }
+}
+
+inputEnterMinute.onkeyup = function(e) {
+    let target = e.srcElement;
+    let myLength = target.value.length 
+    var max = 2;
+
+    if (myLength >= max){
+        inputEndHour.focus()
+    } 
+}
+
+inputEndMinute.onkeyup = function(e) {
+    let target = e.srcElement;
+    let myLength = target.value.length 
+    var max = 2;
+
+    if (myLength >= max){
+        calcTimeButton.focus()        
+    } 
+}
+
+//TROCAR DE INPUT AUTOMATICAMENTE TERMINA
+
+
 
 function getTimes(){
     arrayForNumbers.length = 0;  
