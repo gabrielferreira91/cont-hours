@@ -10,7 +10,8 @@
 
 body {
     font-family: 'Roboto Flex', sans-serif;
-    background: #212121;
+    background-image: linear-gradient(90deg, #020024 0%, #21212c 70%, #02175a 100%);
+    /* background: #212121; */
     color: #ddd;
 
     font-size: 1.6rem;
@@ -37,16 +38,18 @@ main {
     align-items: center;
     padding: 2.5rem;
 
-    background: #c2e2e970;
+    background: #878888;
 
     width: 40rem;
 
     font-weight: 600;
 
-    color: #212121;
+    color: #112;
 
     border: .2rem #ddd solid;
     border-radius: 2.5rem;
+
+    z-index: 999;
 
 }
 
@@ -95,23 +98,25 @@ input[type=number] {
 
 .calcTime {
     background: #80e2fd;
-    margin: 4rem 0 2rem;
+    margin: 2rem 0 2rem;
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     border: none;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem;    
+    box-shadow: 2px 2px 5px black;
 
     text-transform: uppercase;
     font-weight: 700;
 
-    transition: background 500ms;
+    transition: all 500ms;
 }
 
 .calcTime:hover {
-    background: #64b1fa;
+    background: #0fcbfa;
+    box-shadow: 5px 5px 10px #060240;
 }
 
 /* ===> DIVISOR LINE <======== */
@@ -119,7 +124,7 @@ input[type=number] {
 .line {
     transform: translateY(-1rem);
     height: 8rem;
-    border-left: 0.2rem solid rgb(167, 167, 167);
+    border-left: 0.3rem solid rgb(167, 167, 167);
 
     margin: 0 1rem 0 1rem;
 
@@ -127,19 +132,51 @@ input[type=number] {
 
 /* ========> TIME TOTAL <==============  */
 
-#totalTime {
-    font-size: 3.2rem;
+.total {
+    font-size: 2.8rem;
     letter-spacing: 0.3rem;
 }
-/* ====> FOOTER <====== */
 
-footer {
+.sectionCalc {
+    width: 100%;
     display: flex;
 
-    position: relative;
-    align-self:flex-end;
+}
 
-    height: 27vh;
+.divTime{
+    width: 50%;
+    display: flex;    
+    flex-direction: column;
+    align-items: center;  
+}
+
+.divTime p{
+    margin-bottom: 1rem;
+}
+
+.divTotal{
+    width: 50%;
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    align-self: top;
+    gap: 0.5rem;
+}
+
+
+/* ====> FOOTER <====== */
+
+footer a{
+    text-decoration: none;
+    color: #ddd;
+    
+    align-self:flex-end;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    
     
 }
 
@@ -154,7 +191,7 @@ footer div{
     /* border: 3px solid #73AD21;*/
     border-radius: 2rem; 
 
-   background:  #212121;
+   background:  #060222;
 }
 
 footer div:before {

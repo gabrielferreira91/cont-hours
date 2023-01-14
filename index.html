@@ -48,13 +48,34 @@
                         </div>
                     </div>                
                 </div>
-            <button class="calcTime" id="calcTime" onclick='getTimes()'>Calcular Tempo</button>
-            <div id="totalTime"> <strong class="totalHour">00</strong>:<strong class="totalMinute">00</strong></div>            
-            </div>
-        </div>
+            <section class="sectionCalc">
+                <div class="divTime">
+                    <p>
+                        Valor da hora
+                    </p>
+                    <input type="number" placeholder="R$ 0,00" class="hourValue">
+                    <button class="calcTime" id="calcTime" onclick='getTimes()'>Calcular Valor</button>
+                </div>
+                <div class="divTotal">
+                    <p>
+                        Horas trabalhadas
+                    </p>  
+                    <div id="totalTime" class="total"> 
+                        <strong class="totalHour">00</strong>:<strong class="totalMinute">00</strong>
+                    </div>
+                    <p>
+                        Valor a receber
+                    </p>  
+                <div id="divValue" class="total"> 
+                    <strong class="valueRs">R$ </strong><strong class="totalValue">0.00</strong>
+                </div>
+                </div>
+            </section>
+                </div>
     </main>
 
     <footer>
+        <a href="https://gabrielferreira.dev.br" target="_blank">
         <div>
             <span class="developed">
                 Desenvolvido por:
@@ -64,6 +85,7 @@
             <span>
         </div>
     </footer>
+    </a>
     <script src="./contTime.js"></script>
 </body>
 </html>
